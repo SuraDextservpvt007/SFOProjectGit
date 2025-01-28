@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<SFO.Models.Party>
 
 @{
-    ViewData["Title"] = "Party View";
+    ViewData["Title"] = "Party List";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>Party List</h1>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Party ID</th>
-            <th>Party Name</th>
+            <th>Id</th>
+            <th>Name</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -19,11 +20,7 @@
             <tr>
                 <td>@party.PartyID</td>
                 <td>@party.PartyName</td>
-                <td>
-                    <!-- You can add action buttons like edit or delete here -->
-                    <a href="@Url.Action("Edit", "Party", new { id = party.PartyID })" class="btn btn-primary">Edit</a>
-                    <a href="@Url.Action("Delete", "Party", new { id = party.PartyID })" class="btn btn-danger">Delete</a>
-                </td>
+          
             </tr>
         }
     </tbody>

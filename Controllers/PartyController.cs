@@ -1,24 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SFO.Models;
 
 namespace SFO.Controllers
 {
+    
     public class PartyController : Controller
     {
-        private readonly MyDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PartyController(MyDbContext context)
+        public PartyController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IActionResult PartyView()
+        // GET: Party
+        public async Task<IActionResult> Partyview()
         {
-            
-            var parties = _context.Parties.ToList();
-
            
-            return View(parties);
+            var parties = await _context.Parties.ToListAsync();
+            return View(parties); // Pass parties to the view
         }
+
     }
 }
