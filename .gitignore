@@ -75,3 +75,5 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+.vs/SFO/FileContentIndex/6ee1734d-32b6-40d1-972b-691154316854.vsidx
+*.vsidx
