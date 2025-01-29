@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SFO.Models;
-
-
+using SFO.DAL;
 
 public class Program
 {
@@ -9,23 +7,34 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-      options.UseSqlServer(
-          builder.Configuration.GetConnectionString("DefaultConnection"))
-             .EnableSensitiveDataLogging() // Enable to see full queries
-             .LogTo(Console.WriteLine) // Logs to console for debugging
-  );
+        
 
         builder.Services.AddControllersWithViews();
-
+        // Add services to the container.
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        {
+            var ConnectionString =
+                builder.Configuration.GetConnectionString("DefaultConnection");
+            options.UseSqlServer(ConnectionString);
+        });
         var app = builder.Build();
 
-        
+        // Configure the HTTP request pipeline
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthorization();
+
         app.MapControllerRoute(
-     name: "DefaultConnection",
-     pattern: "{controller=Login}/{action=Login}/{id?}"
- );
+            name: "default",  // Changed from "DefaultConnection" to "default"
+            pattern: "{controller=Party}/{action=Partyview}/{id?}"
+        );
 
         // Run the application
         app.Run();

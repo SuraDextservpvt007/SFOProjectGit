@@ -1,4 +1,4 @@
-﻿namespace SFO.Models
+﻿namespace SFO.Models.DBEntities
 {
     public class Party
     {
