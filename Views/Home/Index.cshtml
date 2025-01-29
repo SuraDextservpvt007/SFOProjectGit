@@ -1,8 +1,46 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Log In";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid">
+    <div class="row" style="height: 100vh">
+        <div class="col-md-6">
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <div>
+                    <h1 class="font-dm-serif">SFO Dashboard</h1>
+                    <p class="small text-muted">Enter your credential to access your account</p>
+                </div>
+                <div class="w-90">
+                    <div class="login-input-container">
+                        <label htmlfor="email">Email</label>
+                        <input type="text" placeholder="example@gmail.com"/>
+                    </div>
+                    <div class="login-input-container">
+                        <label htmlfor="password">Password</label>
+                        <input type="password" placeholder="Enter the password"/>
+                    </div>
+                    <div class="d-flex justify-content-between w-100">
+                        <div class="keep-me-login">
+                            <input type="checkbox"/>
+                            <p>Keep me logged in</p>
+                        </div>
+                        <div>
+                            <a href="#" class="forget-password">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="login-button">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="login-ad">
+                <p class="m-4">Advertisement part Will Be here</p>
+            </div>
+        </div>
+    </div>
 </div>
+

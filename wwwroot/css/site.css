@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
   font-size: 14px;
 }
@@ -8,8 +10,29 @@ html {
   }
 }
 
+:root {
+  --primary: #007bff;
+  --secondary: #FEC806;
+  --font-dm-serif:"DM Serif Display", serif;
+  --font-roboto: "Roboto", serif;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-dm-serif {
+  font-family: var(--font-dm-serif);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
 }
 
 html {
@@ -18,5 +41,78 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  /*margin-bottom: 60px;*/
+  font-family: var(--font-roboto);
+}
+
+/* Login Dashboard CSS */
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  background: #F3F4F6;
+  width: 300px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.login-input-container > label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-input-container > input {
+  border: none;
+  font-size: inherit;
+  background: inherit;
+  color: black;
+}
+
+
+.login-input-container > input:focus {
+  outline: none;
+}
+
+.keep-me-login {
+  display: flex;
+  gap:4px;
+  align-items: center;
+}
+
+.keep-me-login > p {
+  margin:0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.forget-password {
+  color: var(--secondary);
+}
+
+.forget-password:hover {
+  color: var(--secondary);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--secondary);
+  color: black;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  margin: 2rem 0;
+}
+
+/* Login Ad */
+
+.login-ad {
+  margin: 1rem auto;
+  width: 80%;
+  height: calc(100% - 2rem);
+  background: #FAD8D7;
+  border-radius: 12px;
 }
